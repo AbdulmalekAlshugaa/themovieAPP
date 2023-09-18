@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableWithoutFeedback, Dimensions } from 'react-native'
+import { View, Text, Image, TouchableWithoutFeedback, Dimensions, StyleSheet } from 'react-native'
 import React from 'react'
 import Carousel from 'react-native-snap-carousel';
 import { useNavigation } from '@react-navigation/native';
@@ -47,3 +47,12 @@ const MovieCard = ({ item, handleClick }) => {
         </TouchableWithoutFeedback>
     )
 }
+
+const styles = StyleSheet.create({
+    text: {
+        color: 'white',  // equivalent to "text-white"
+        fontSize: 20,     // equivalent to "text-xl"
+        marginHorizontal: 16, // equivalent to "mx-4"
+        marginBottom: 20,     // equivalent to "mb-5"
+    },
+});

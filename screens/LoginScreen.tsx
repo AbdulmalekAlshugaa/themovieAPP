@@ -13,15 +13,13 @@ const LoginScreen = () => {
     const [password, setPassword] = useState('');
 
     const handleLogin = () => {
+        navigation.navigate('Home')
         const login = LoginFlow(email, password);
 
         if (login) {
             navigation.navigate('Home')
         }
     }
-
-
-
 
     return (
         <SafeAreaView style={makeStyle.container}>
