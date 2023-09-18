@@ -15,7 +15,7 @@ export default function TrendingMovies({ data }) {
     return (
         <View className="mb-8">
 
-            <Text className="text-white text-xl mx-4 mb-5">Trending</Text>
+            <Text style={makeStyle.text}>Trending</Text>
             <Carousel
                 data={data}
                 renderItem={({ item }) => <MovieCard handleClick={handleClick} item={item} />}
@@ -36,23 +36,27 @@ const MovieCard = ({ item, handleClick }) => {
     return (
         <TouchableWithoutFeedback onPress={() => handleClick(item)}>
             <Image
+                style={makeStyle.Image}
                 // source={require('../assets/images/moviePoster1.png')} 
                 source={{ uri: image500(item.poster_path) }}
-                style={{
-                    width: width * 0.6,
-                    height: height * 0.4
-                }}
-                className="rounded-3xl"
+
+
             />
         </TouchableWithoutFeedback>
     )
 }
 
-const styles = StyleSheet.create({
+const makeStyle = StyleSheet.create({
     text: {
         color: 'white',  // equivalent to "text-white"
         fontSize: 20,     // equivalent to "text-xl"
         marginHorizontal: 16, // equivalent to "mx-4"
         marginBottom: 20,     // equivalent to "mb-5"
     },
+    Image: {
+        borderRadius: 24,
+        width: width * 0.6,
+        height: height * 0.4,
+    }
+
 });
