@@ -1,20 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import AppNavigation from './app/navigation/appNavigation';
+import { store } from './app/store'
+import { Provider } from 'react-redux'
+// import("./ReactotronConfig").then(() => console.log("Reactotron Configured"))
+import { PaperProvider } from 'react-native-paper';
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <PaperProvider>
+        <AppNavigation />
+      </PaperProvider>
+    </Provider>
+
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
