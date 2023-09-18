@@ -6,7 +6,13 @@ var {width, height} = Dimensions.get('window');
 export default function Cast({cast, navigation}) {
   return (
     <View className="my-6">
-        <Text className="text-white text-lg mx-4 mb-5">Top Cast</Text>
+          <Text style={{
+              color: 'white',
+              fontSize: 20,     // equivalent to "text-xl"
+              marginHorizontal: 16, // equivalent to "mx-4"
+              marginBottom: 16,     // equivalent to "mb-5"
+
+          }}>Top Cast</Text>
         <ScrollView 
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -18,22 +24,49 @@ export default function Cast({cast, navigation}) {
                         <TouchableOpacity 
                             key={index} 
                             onPress={()=> navigation.navigate('Person', person)} 
-                            className="mr-4 items-center">
+                            style={{
+                                marginRight: 16,
+                                alignItems: 'center',
+                            }}>
                             <View 
-                                className="overflow-hidden rounded-full h-20 w-20 items-center border border-neutral-500">
+                                style={{
+                                    overflow: 'hidden',  // equivalent to "overflow-hidden"
+                                    borderRadius: 40,   // equivalent to "rounded-full" (assuming a 2x radius)
+                                    height: 80,          // equivalent to "h-20" (adjust as needed)
+                                    width: 80,           // equivalent to "w-20" (adjust as needed)
+                                    alignItems: 'center',  // equivalent to "items-center"
+                                    borderColor: '#D1D5DB', // equivalent to "border-neutral-500"
+                                    borderWidth: 1,
+                                }}
+
+                            >
                                 <Image 
-                                    className="rounded-2xl h-24 w-20"
+                                    style={{
+                                        borderRadius: 16,
+                                        height: 96,
+                                        width: 80,
+                                    }}
                                     // source={require('../assets/images/castImage1.png')} 
                                     source={{uri: image185(person?.profile_path) || fallbackPersonImage}} 
                                 />
                             </View>
                             
-                            <Text className="text-white text-xs mt-1">
+                            <Text
+                                style={{
+                                    color: 'white',
+                                    fontSize: 14,     // equivalent to "text-base"
+                                    marginTop: 8,     // equivalent to "mt-2"
+                                }}
+                            >
+
                                 {
                                     person?.character.length>10? person.character.slice(0,10)+'...' : person?.character
                                 }
                             </Text>
-                            <Text className="text-neutral-400 text-xs">
+                            <Text style={{
+                                color: '#9CA3AF', // equivalent to "text-neutral-400"
+                                fontSize: 12,
+                            }}>
                                 {
                                     person?.original_name.length>10? person.original_name.slice(0,10)+'...' : person?.original_name
                                 }
