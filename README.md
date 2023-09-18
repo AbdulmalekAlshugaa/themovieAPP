@@ -19,7 +19,7 @@ go to https://www.themoviedb.org, create an account and get the api key, then us
 ## Then
 
 Run The app
-
+,
 ### `yarn start`
 
 Runs your app in development mode.

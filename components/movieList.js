@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, TouchableWithoutFeedback, Image, Dimensions, TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, TouchableWithoutFeedback, Image, Dimensions, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 import { fallbackMoviePoster, image185, image342, poster342 } from '../app/api/moviedb';
@@ -8,14 +8,17 @@ const { width, height } = Dimensions.get('window');
 export default function MovieList({ title, hideSeeAll, data }) {
   const navigation = useNavigation();
   return (
-    <View className="mb-8 space-y-4">
+    <View style={makeStyle.container}>
 
-      <View className="mx-4 flex-row justify-between items-center">
-        <Text className="text-white text-lg">{title}</Text>
+      <View style={makeStyle.bodyContainer}>
+        <Text style={makeStyle.text}>{title}</Text>
         {
           !hideSeeAll && (
             <TouchableOpacity>
-              <Text style={styles.text} className="text-lg">See All</Text>
+              <Text style={styles.text} style={{
+                color: '#F5C518',
+                fontSize: 18,
+              }}>See All</Text>
             </TouchableOpacity>
           )
         }
@@ -35,14 +38,22 @@ export default function MovieList({ title, hideSeeAll, data }) {
                 key={index}
                 onPress={() => navigation.push('Movie', item)}
               >
-                <View className="space-y-1 mr-4">
+                <View style={{
+                  marginBottom: 4,
+                  marginRight: 16,
+                }}>
                   <Image
                 // source={require('../assets/images/moviePoster2.png')}
                     source={{ uri: image185(item.poster_path) || fallbackMoviePoster }}
-                    className="rounded-3xl"
-                    style={{ width: width * 0.33, height: height * 0.22 }}
+
+                    style={{ width: width * 0.33, height: height * 0.22, borderRadius: 24 }}
                   />
-                  <Text className="text-neutral-300 ml-1">
+                  <Text style={{
+                    color: '#D1D5DB',
+                    fontSize: 14,
+                    textAlign: 'center',
+                    marginVertical: 8,
+                  }}>
                     {
                       item.title.length > 14 ? item.title.slice(0, 14) + '...' : item.title
                     }
@@ -56,3 +67,25 @@ export default function MovieList({ title, hideSeeAll, data }) {
     </View>
   )
 }
+
+const makeStyle = StyleSheet.create({
+  container: {
+    marginBottom: 32,
+    marginVertical: 16,
+  },
+  bodyContainer: {
+    marginHorizontal: 16,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  text: {
+    color: 'white',
+    fontSize: 18,
+  },
+  imageContainert: {
+    borderRadius: 24,
+    width: width * 0.6,
+    height: height * 0.4,
+  }
+});
