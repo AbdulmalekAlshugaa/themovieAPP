@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 import { TextInput, Text, Button } from 'react-native-paper'
 import { View } from 'react-native-animatable'
 import { LoginFlow } from '../app/helper/utilts'
+import { storeToken } from '../app/localStorage/AppLocalStorage'
 
 const LoginScreen = () => {
     const navigation = useNavigation();
@@ -13,10 +14,9 @@ const LoginScreen = () => {
     const [password, setPassword] = useState('');
 
     const handleLogin = () => {
-        navigation.navigate('Home')
         const login = LoginFlow(email, password);
-
         if (login) {
+            storeToken(login)
             navigation.navigate('Home')
         }
     }

@@ -5,7 +5,7 @@ export const getAuthToken = () => {
     return localStorage.getItem(key);
 }
 
-const storeToken = async (token: string) => {
+export const storeToken = async (token: string) => {
     try {
         await AsyncStorage.setItem(key, token);
     } catch (e) {
