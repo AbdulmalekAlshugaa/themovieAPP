@@ -48,10 +48,10 @@ const MovieCard = ({ item, handleClick }) => {
 
 const makeStyle = StyleSheet.create({
     text: {
-        color: 'white',  // equivalent to "text-white"
-        fontSize: 20,     // equivalent to "text-xl"
-        marginHorizontal: 16, // equivalent to "mx-4"
-        marginBottom: 20,     // equivalent to "mb-5"
+        color: 'white',
+        fontSize: 20,
+        marginHorizontal: 16,
+        marginBottom: 20,    
     },
     Image: {
         borderRadius: 24,

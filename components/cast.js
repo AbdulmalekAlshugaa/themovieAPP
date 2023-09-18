@@ -1,9 +1,9 @@
 import { View, Text, ScrollView, TouchableOpacity, Image, Dimensions } from 'react-native'
 import React from 'react'
-import { fallbackPersonImage, image185, image342 } from '../app/api/moviedb';
-var {width, height} = Dimensions.get('window');
+import { fallbackPersonImage, image185 } from '../app/api/moviedb';
 
-export default function Cast({cast, navigation}) {
+
+const Cast = ({ cast, navigation }) => {
   return (
     <View className="my-6">
           <Text style={{
@@ -30,12 +30,12 @@ export default function Cast({cast, navigation}) {
                             }}>
                             <View 
                                 style={{
-                                    overflow: 'hidden',  // equivalent to "overflow-hidden"
-                                    borderRadius: 40,   // equivalent to "rounded-full" (assuming a 2x radius)
-                                    height: 80,          // equivalent to "h-20" (adjust as needed)
-                                    width: 80,           // equivalent to "w-20" (adjust as needed)
-                                    alignItems: 'center',  // equivalent to "items-center"
-                                    borderColor: '#D1D5DB', // equivalent to "border-neutral-500"
+                                    overflow: 'hidden',
+                                    borderRadius: 40,
+                                    height: 80,
+                                    width: 80,
+                                    alignItems: 'center',
+                                    borderColor: '#D1D5DB',
                                     borderWidth: 1,
                                 }}
 
@@ -81,3 +81,50 @@ export default function Cast({cast, navigation}) {
     </View>
   )
 }
+
+
+import { StyleSheet } from 'react-native';
+
+export const styles = StyleSheet.create({
+    container: {
+        marginVertical: 6,
+    },
+    sectionTitle: {
+        color: 'white',
+        fontSize: 20,
+        marginHorizontal: 16,
+        marginBottom: 16,
+    },
+    scrollView: {
+        flexDirection: 'row',
+    },
+    castItemContainer: {
+        marginRight: 16,
+        alignItems: 'center',
+    },
+    castImageContainer: {
+        overflow: 'hidden',
+        borderRadius: 40,
+        height: 80,
+        width: 80,
+        alignItems: 'center',
+        borderColor: '#D1D5DB',
+        borderWidth: 1,
+    },
+    castImage: {
+        borderRadius: 16,
+        height: 96,
+        width: 80,
+    },
+    castCharacter: {
+        color: 'white',
+        fontSize: 14,
+        marginTop: 8,
+    },
+    castName: {
+        color: '#9CA3AF',
+        fontSize: 12,
+    },
+});
+
+export default Cast

@@ -189,7 +189,7 @@ const makeStyle = StyleSheet.create({
         color: '#808080',
         fontWeight: 'bold',
         fontSize: 16,
-        textAlign: 'center', 
+        marginVertical: 4,
     },
 
 });
