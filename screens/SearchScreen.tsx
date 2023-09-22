@@ -15,7 +15,7 @@ const SearchScreen = () => {
     const [loading, setLoading] = useState(false);
     const [results, setResults] = useState([])
 
-    const handleSearch = search => {
+    const handleSearch = (search: string) => {
         if (search && search.length > 2) {
             setLoading(true);
             searchMovies({
@@ -47,11 +47,23 @@ const SearchScreen = () => {
                     onChangeText={handleTextDebounce}
                     placeholder="Search Movie"
                     placeholderTextColor={'lightgray'}
-                    className="pb-1 pl-6 flex-1 text-base font-semibold text-white tracking-wider"
+                    style={{
+                        width: '90%',
+                        color: 'white',
+                        fontSize: 18,
+                        fontFamily: 'Roboto-Regular',
+                        paddingHorizontal: 10,
+
+                    }}
                 />
                 <TouchableOpacity
                     onPress={() => navigation.navigate('Home')}
-                    className="rounded-full p-3 m-1 bg-neutral-500"
+                    style={{
+                        width: '10%',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        marginRight: 10,
+                    }}
                 >
                     <XMarkIcon size="25" color="white" />
 

@@ -8,12 +8,13 @@ import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native';
 import Loading from '../components/loading';
 import { styles, theme } from '../app/theme';
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { useAppDispatch } from '../app/store';
 
 import { fetchAllTopRatedMovies, fetchAllTrendingMovies, selectTrendingMovies, showTrendingMovies, fetchAllUpcomingMovies, selectUpcomingMovies, selectTopRatedMovies } from '../app/daemon/slices';
 
 const HomeScreen = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const navigation = useNavigation();
   const trendingMovies = useSelector(selectTrendingMovies)
   const upcomingMovies = useSelector(selectUpcomingMovies)

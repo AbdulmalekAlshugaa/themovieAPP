@@ -39,8 +39,6 @@ const MovieCard = ({ item, handleClick }) => {
                 style={makeStyle.Image}
                 // source={require('../assets/images/moviePoster1.png')} 
                 source={{ uri: image500(item.poster_path) }}
-
-
             />
         </TouchableWithoutFeedback>
     )

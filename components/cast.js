@@ -8,9 +8,9 @@ const Cast = ({ cast, navigation }) => {
     <View className="my-6">
           <Text style={{
               color: 'white',
-              fontSize: 20,     // equivalent to "text-xl"
-              marginHorizontal: 16, // equivalent to "mx-4"
-              marginBottom: 16,     // equivalent to "mb-5"
+              fontSize: 20,
+              marginHorizontal: 16,
+              marginBottom: 16,    
 
           }}>Top Cast</Text>
         <ScrollView 

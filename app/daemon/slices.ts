@@ -161,7 +161,7 @@ export const reducer = combineReducers({
     topRatedMovies: topRatedMoviesSlice.reducer
 })
 
-// trending movies selectors 
+// trending movies selectors for business logic
 export const selectTrendingMovies = (state: RootState) => state.movies.trendingMovies.movies.results;
 export const selectTrendingMoviesStatus = (state: RootState) => state.movies.trendingMovies.status;
 export const selectTrendingMoviesError = (state: RootState) => state.movies.trendingMovies.error;
