@@ -22,6 +22,8 @@
     "lodash": "^4.17.21",
     "lottie-ios": "^3.4.0",
     "lottie-react-native": "5.1.4",
+    "mobx": "^6.12.0",
+    "mobx-react": "^9.1.0",
     "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-native": "0.71.8",
